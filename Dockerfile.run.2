@@ -1,0 +1,7 @@
+FROM gcr.io/distroless/java
+
+COPY --from=BUILD /tmp/project/target/*.war
+
+ENTRYPOINT ["java", "-jar", "*.war"]
+
+

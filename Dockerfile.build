@@ -1,0 +1,6 @@
+FROM maven as BUILD
+RUN mkdir -p /tmp/project
+ADD . /tmp/project
+WORKDIR /tmp/project
+RUN mvn package
+

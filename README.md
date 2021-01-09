@@ -1,4 +1,5 @@
-
+> pass = pass
+> cmd = comando
 
 # SpringBootWebshell
 

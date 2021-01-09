@@ -1,0 +1,7 @@
+FROM openjdk
+
+COPY --from=BUILD /tmp/project/target/*.war
+
+ENTRYPOINT ["java", "-jar", "*.war"]
+
+

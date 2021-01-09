@@ -1,0 +1,14 @@
+FROM maven as BUILD
+RUN mkdir -p /tmp/project
+ADD . /tmp/project
+WORKDIR /tmp/project
+RUN mvn package
+
+FROM gcr.io/distroless/java
+
+COPY --from=BUILD /tmp/project/target/SpringBootWebshll-1.0.war /
+
+# The entrypoint of this image is set to the equivalent of "java -jar", so this image expects users to supply a path to a JAR file in the CMD.
+CMD ["/SpringBootWebshll-1.0.war"]
+
+

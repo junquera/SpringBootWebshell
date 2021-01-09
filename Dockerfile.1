@@ -1,0 +1,13 @@
+FROM maven as BUILD
+RUN mkdir -p /tmp/project
+ADD . /tmp/project
+WORKDIR /tmp/project
+RUN mvn package
+
+FROM openjdk
+
+COPY --from=BUILD /tmp/project/target/SpringBootWebshll-1.0.war /
+
+ENTRYPOINT ["java", "-jar", "/SpringBootWebshll-1.0.war"]
+
+
