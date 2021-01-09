@@ -1,6 +1,3 @@
-> pass = pass
-> cmd = comando
-
 # SpringBootWebshell
 
 Springboot的一个webshell。
@@ -99,4 +96,11 @@ http://127.0.0.1:8012/cmd
 
 
 
+## Docker distroless v. any
 
+Building Dockerfile.1 you can execute this:
+
+> pass = pass
+> cmd = ls
+
+BUt with Dockerfile.2 (the distroless one), you wont be able.
